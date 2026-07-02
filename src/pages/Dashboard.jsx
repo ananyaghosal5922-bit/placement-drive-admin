@@ -30,14 +30,11 @@ function Dashboard() {
   }}
 >
   Delete
-</button>
+</button>    
     </div>
   ))
 )}
-
-    </div>
-
-    
+    </div>   
   );
 }
 
