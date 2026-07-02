@@ -3,7 +3,8 @@ import useDriveStore from "../store/DriveStore";
 
 function Dashboard() {
   const { drives, deleteDrive } = useDriveStore();
-
+ 
+  console.log("Drives:",drives);
   return (
     <div>
       <h1>Placement Drive Dashboard</h1>
@@ -18,6 +19,9 @@ function Dashboard() {
     <div key={index}>
       <h3>{drive.companyName}</h3>
       <p>{drive.role}</p>
+      <Link to={`/drive/${drive.id}`}>
+  <button>View Details</button>
+   </Link>
       <button
   onClick={() => {
     const confirmDelete = window.confirm(

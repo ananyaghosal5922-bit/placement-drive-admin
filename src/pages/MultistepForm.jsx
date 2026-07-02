@@ -31,7 +31,11 @@ function MultiStepForm() {
       }}
       validationSchema={step === 1 ? step1Schema : null}
       onSubmit={(values) => {
-       addDrive(values);  
+        console.log("Submitted!");
+        addDrive({
+       id: Date.now(),
+      ...values,
+     }); 
         console.log(values);
         alert("Placement Drive Created Successfully!");
       }}
