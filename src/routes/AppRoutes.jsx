@@ -6,19 +6,12 @@ import DriveDetails from "../pages/DriveDetails";
 
 function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Dashboard />} />
-
-      <Route
-        path="/create"
-        element={<MultiStepForm />}
-      />
-
-      <Route
-        path="/drive/:id"
-        element={<DriveDetails />}
-      />
-    </Routes>
+      <Routes>
+  <Route path="/" element={<Dashboard />} />
+  <Route path="/create" element={<MultiStepForm />} />
+  <Route path="/drive/:id" element={<DriveDetails />} />
+  <Route path="/edit/:id" element={<MultiStepForm />} />
+ </Routes>
   );
 }
 

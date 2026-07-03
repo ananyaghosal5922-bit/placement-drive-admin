@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 import useDriveStore from "../store/DriveStore";
 
 function DriveDetails() {
@@ -39,6 +39,10 @@ function DriveDetails() {
       <p>Email: {drive.email}</p>
 
       <p>Deadline: {drive.deadline}</p>
+
+      <Link to={`/edit/${drive.id}`}>
+     <button>Edit</button>
+     </Link>
     </div>
   );
 }

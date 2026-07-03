@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 
 import { step1Schema } from "../validation/validation";
@@ -11,11 +12,24 @@ import Step4 from "../components/Step4";
 
 function MultiStepForm() {
   const [step, setStep] = useState(1);
-  const { addDrive } = useDriveStore();
+  const { id } = useParams();
+
+const navigate = useNavigate();
+
+const {
+  drives,
+  addDrive,
+  updateDrive,
+} = useDriveStore();
+
+const existingDrive = drives.find(
+  (drive) => drive.id === Number(id)
+);
 
   return (
     <Formik
-      initialValues={{
+      initialValues={
+         existingDrive || {
         companyName: "",
         website: "",
         industry: "",
@@ -32,12 +46,21 @@ function MultiStepForm() {
       validationSchema={step === 1 ? step1Schema : null}
       onSubmit={(values) => {
         console.log("Submitted!");
+
+        if(existingDrive){
+
+    updateDrive(values);
+
+      }else{
         addDrive({
        id: Date.now(),
       ...values,
      }); 
+    }
         console.log(values);
         alert("Placement Drive Created Successfully!");
+
+        navigate("/");
       }}
     >
       <Form>
