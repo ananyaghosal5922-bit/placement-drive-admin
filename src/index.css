@@ -1,15 +1,41 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  background: #f4f6f9;
+  margin: 20px;
 }
 
-input {
-  width: 300px;
-  padding: 10px;
-  margin: 10px 0;
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 button {
-  padding: 8px 16px;
+  padding: 8px 15px;
   margin-right: 10px;
+  cursor: pointer;
+}
+
+label {
+  font-weight: bold;
+}
+
+h1 {
+  color: #1f3c88;
+}
+
+.button-container{
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+}
+
+.button-container button{
+  padding:10px 20px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
 }

@@ -17,16 +17,12 @@ function MultiStepForm() {
 const navigate = useNavigate();
 
 const {
-  drives,
-  addDrive,
-  updateDrive,
-} = useDriveStore();
+  drives,addDrive, updateDrive,} = useDriveStore();
 
 const existingDrive = drives.find(
   (drive) => drive.id === Number(id)
 );
-
-  return (
+ return (
     <Formik
       initialValues={
          existingDrive || {
@@ -64,8 +60,13 @@ const existingDrive = drives.find(
       }}
     >
       <Form>
-        <h1>Create Placement Drive</h1>
+        <h1>Placement Drive Registration</h1>
 
+        <p>Please fill all required details.</p>
+
+        <hr />
+        <h3>Step {step} of 4</h3>
+        
         {step === 1 && <Step1 setStep={setStep} />}
         {step === 2 && <Step2 setStep={setStep} />}
         {step === 3 && <Step3 setStep={setStep} />}

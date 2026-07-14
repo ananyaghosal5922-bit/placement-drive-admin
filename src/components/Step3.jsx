@@ -4,7 +4,9 @@ function Step3({ setStep }) {
   return (
     <>
       <h2>Eligibility</h2>
-
+      <label>
+      CGPA <span style={{ color: "red" }}>*</span>
+    </label>
       <Field
         type="number"
         name="cgpa"
@@ -12,15 +14,19 @@ function Step3({ setStep }) {
       />
 
       <br /><br />
-
+      <label>
+       Batch Year <span style={{ color: "red" }}>*</span>
+    </label>
       <Field
         type="number"
         name="batch"
-        placeholder="Batch Year"
+        placeholder="Enter Batch Year"
       />
 
       <br /><br />
-
+      <label>
+  Eligible Branches <span style={{ color: "red" }}>*</span>
+    </label>
       <h3>Eligible Branches</h3>
 
       <label>
@@ -56,19 +62,23 @@ function Step3({ setStep }) {
 
       <br /><br />
 
-      <button
-        type="button"
-        onClick={() => setStep(2)}
-      >
-        Back
-      </button>
+     <div className="button-container">
 
-      <button
-        type="button"
-        onClick={() => setStep(4)}
-      >
-        Next
-      </button>
+  <button
+    type="button"
+    onClick={() => setStep(2)}
+  >
+    Previous
+  </button>
+
+  <button
+    type="button"
+    onClick={() => setStep(4)}
+  >
+    Next
+  </button>
+
+</div>
     </>
   );
 }

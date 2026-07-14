@@ -4,48 +4,61 @@ function Step2({ setStep }) {
   return (
     <>
       <h2>Job Specifications</h2>
-
+      
+      <label>
+        Role <span style={{ color: "red" }}>*</span>
+      </label>
       <Field
         name="role"
-        placeholder="Job Role"
+        placeholder="Enter Job Role"
       />
 
       <br /><br />
-
+    <label>
+     Designation <span style={{ color: "red" }}>*</span>
+    </label>
       <Field
         name="designation"
-        placeholder="Designation"
+        placeholder=" Enter Designation"
       />
 
       <br /><br />
-
+      <label>
+      CTC <span style={{ color: "red" }}>*</span>
+      </label>
       <Field
         name="ctc"
-        placeholder="CTC"
+        placeholder="Enter CTC"
       />
 
       <br /><br />
-
+      <label>
+  location <span style={{ color: "red" }}>*</span>
+     </label>
       <Field
         name="location"
-        placeholder="Location"
+        placeholder="Enter Location"
       />
 
       <br /><br />
 
-      <button
-        type="button"
-        onClick={() => setStep(1)}
-      >
-        Back
-      </button>
+     <div className="button-container">
 
-      <button
-        type="button"
-        onClick={() => setStep(3)}
-      >
-        Next
-      </button>
+  <button
+    type="button"
+    onClick={() => setStep(1)}
+  >
+    Previous
+  </button>
+
+  <button
+    type="button"
+    onClick={() => setStep(3)}
+  >
+    Next
+  </button>
+
+</div> 
     </>
   );
 }

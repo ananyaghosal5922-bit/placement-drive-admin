@@ -7,19 +7,24 @@ const { validateForm } = useFormikContext();
     <>
       <h2>Company Details</h2>
 
+      <label>
+       Company Name <span style={{ color: "red" }}>*</span>
+      </label>
       <Field
         name="companyName"
-        placeholder="Company Name"
+        placeholder="Enter Company Name"
       />
       <ErrorMessage
        name="companyName"
        component="div"
      />
       <br /><br />
-
+      <label>
+       Website URL <span style={{ color: "red" }}>*</span>
+      </label>
       <Field
         name="website"
-        placeholder="Website URL"
+        placeholder="Enter Website URL"
       />
       <ErrorMessage
        name="website"
@@ -27,10 +32,12 @@ const { validateForm } = useFormikContext();
        />
 
       <br /><br />
-
+      <label>
+      Industry Type <span style={{ color: "red" }}>*</span>
+      </label>
       <Field
         name="industry"
-        placeholder="Industry Type"
+        placeholder="Enter Industry Type"
       />
       <ErrorMessage
        name="industry"
@@ -44,13 +51,9 @@ const { validateForm } = useFormikContext();
   onClick={async () => {
     const errors = await validateForm();
 
-    if (
-      !errors.companyName &&
-      !errors.website &&
-      !errors.industry
-    ) {
-      setStep(2);
-    }
+   if (Object.keys(errors).length === 0) {
+  setStep(2);
+  }
   }}
   > Next
     </button>

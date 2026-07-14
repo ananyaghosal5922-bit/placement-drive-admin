@@ -9,17 +9,20 @@ function Dashboard() {
   const filteredDrives = drives.filter((drive) =>
   drive.companyName.toLowerCase().includes(search.toLowerCase())
 );
- 
   console.log("Drives:",drives);
   return (
     <div>
       <h1>Placement Drive Dashboard</h1>
+      <p>Manage all placement drives.</p>
 
+      <h3>Total Drives: {drives.length}</h3>
+
+      <hr />
       <Link to="/create">
         <button>Create New Drive</button>
       </Link>
       <br />
-<br />
+      <br />
 
 <input
   type="text"
@@ -28,8 +31,8 @@ function Dashboard() {
   onChange={(e) => setSearch(e.target.value)}
 />
 
-<br />
-<br />
+    <br />
+    <br />
     {drives.length === 0 ? (
   <p>No Placement Drives Available</p>
   ) : (
@@ -37,7 +40,11 @@ function Dashboard() {
     <div key={index}>
       <h3>{drive.companyName}</h3>
       <p>{drive.role}</p>
-      <Link to={`/drive/${drive.id}`}>
+      <p>CTC: {drive.ctc}</p>
+       <p>Location: {drive.location}</p>
+       <p>Deadline: {drive.deadline}</p>
+
+  <Link to={`/drive/${drive.id}`}>
   <button>View Details</button>
    </Link>
       <button
