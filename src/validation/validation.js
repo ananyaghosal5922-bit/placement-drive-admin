@@ -10,4 +10,8 @@ export const step1Schema = Yup.object({
 
   industry: Yup.string()
     .required("Industry is required"),
+
+    ctc: Yup.number()
+  .typeError("CTC must be a number")
+  .required("CTC is required")
 });

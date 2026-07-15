@@ -59,6 +59,7 @@ const existingDrive = drives.find(
         navigate("/");
       }}
     >
+      <div className="form-container">
       <Form>
         <h1>Placement Drive Registration</h1>
 
@@ -72,6 +73,7 @@ const existingDrive = drives.find(
         {step === 3 && <Step3 setStep={setStep} />}
         {step === 4 && <Step4 setStep={setStep} />}
       </Form>
+      </div>
     </Formik>
   );
 }
