@@ -2,6 +2,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import useDriveStore from "../store/DriveStore";
 
+import {
+  FaBuilding,
+  FaBriefcase, 
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+} from "react-icons/fa";
+
+import { FaMoneyBill1 } from "react-icons/fa6";
+
 function Dashboard() {
   const { drives, deleteDrive } = useDriveStore();
   const [search, setSearch] = useState("");
@@ -23,26 +32,24 @@ function Dashboard() {
       </Link>
       <br />
       <br />
-
 <input
   type="text"
   placeholder="Search by Company Name"
   value={search}
   onChange={(e) => setSearch(e.target.value)}
 />
-
-    <br />
+   <br />
     <br />
     {drives.length === 0 ? (
   <p>No Placement Drives Available</p>
   ) : (
   filteredDrives.map((drive, index) => (
     <div key={index}>
-      <h3>{drive.companyName}</h3>
-      <p>{drive.role}</p>
-      <p>CTC: {drive.ctc}</p>
-       <p>Location: {drive.location}</p>
-       <p>Deadline: {drive.deadline}</p>
+    <h3> <FaBuilding />{drive.companyName}</h3>
+      <p><FaBriefcase />{drive.role}</p>
+      <p> <FaMoneyBill1 />/CTC:{drive.ctc}</p>
+       <p> <FaMapMarkerAlt />Location: {drive.location}</p>
+       <p><FaCalendarAlt />Deadline: {drive.deadline}</p>
 
   <Link to={`/drive/${drive.id}`}>
   <button>View Details</button>

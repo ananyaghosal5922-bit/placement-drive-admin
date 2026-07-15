@@ -1,4 +1,5 @@
 import { Field } from "formik";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Step2({ setStep }) {
   return (
@@ -27,8 +28,9 @@ function Step2({ setStep }) {
       CTC <span style={{ color: "red" }}>*</span>
       </label>
       <Field
-        name="ctc"
-        placeholder="Enter CTC"
+       type="number"
+       name="ctc"
+       placeholder="Enter CTC"
       />
 
       <br /><br />
@@ -47,7 +49,7 @@ function Step2({ setStep }) {
   <button
     type="button"
     onClick={() => setStep(1)}
-  >
+  ><FaArrowLeft />
     Previous
   </button>
 
@@ -55,7 +57,7 @@ function Step2({ setStep }) {
     type="button"
     onClick={() => setStep(3)}
   >
-    Next
+    Next <FaArrowRight />
   </button>
 
 </div> 

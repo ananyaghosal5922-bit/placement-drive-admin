@@ -1,4 +1,5 @@
 import { Field } from "formik";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Step3({ setStep }) {
   return (
@@ -67,14 +68,14 @@ function Step3({ setStep }) {
   <button
     type="button"
     onClick={() => setStep(2)}
-  >
+  >  <FaArrowLeft />
     Previous
   </button>
 
   <button
     type="button"
     onClick={() => setStep(4)}
-  >
+  > <FaArrowRight />
     Next
   </button>
 
